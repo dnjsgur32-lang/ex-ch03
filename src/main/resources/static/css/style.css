@@ -1,0 +1,14 @@
+body{font-family: system-ui, sans-serif; line-height: 1.5; margin: 16px; }
+h3 { margin-top: 28px; }
+form { margin-bottom: 10px;}
+
+figure { margin: 8px 0 28px;}
+.shot {
+    max-width: 500px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 4px;
+    background: #fafafa;
+}
+figcaption { font-size: 0.9rem; color: #666; margin-top: 6px;}

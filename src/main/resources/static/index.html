@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>화면테스트 및 포스트맨 테스트</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <h3>get 방식</h3>
+    <p>화면으로만 테스트 가능</p>
+    <form action="./article-get" method="get">
+        <input type="text" name="title">
+        <input type="text" name="content">
+        <input type="submit" value="제출">
+    </form>
+    <figure>
+        <img class="shot" src="img/get-result.png" alt="GET 방식 결과 캡처">
+        <figcaption>GET 방식 호출 결과 화면</figcaption>
+    </figure>
+
+    <h3>post 방식</h3>
+    <p>화면 or 포스트맨 둘 다 테스트 가능</p>
+    <form action="./article-post" method="post">
+        <input type="text" name="title">
+        <input type="text" name="content">
+        <input type="submit" value="제출">
+    </form>
+    <figure>
+        <img class="shot" src="img/postweb-result.png" alt="GET 방식 결과 캡처">
+        <figcaption>GET 방식 호출 결과 화면</figcaption>
+        <img class="shot" src="img/postman1-result.png" alt="POST 방식 결과 캡처">
+        <figcaption>POST 방식 호출 결과 화면</figcaption>
+    </figure>
+
+    <h3>postman 방식</h3>
+    <p>포스트맨으로만 테스트 가능.
+        "/article-postman"</p>
+    <form action="./article-postman" method="post">
+        <input type="text" name="title">
+        <input type="text" name="content">
+        <input type="submit" value="제출">
+    </form>
+    <figure>
+        <img class="shot" src="img/postman-origin-result.png" alt="POST MAN 방식 결과 캡쳐">
+        <figcaption>POST MAN 방식 호출 결과 화면</figcaption>
+    </figure>
+
+
+    <h3>auto 방식</h3>
+    <p>포스트맨으로만 테스트 가능</p>
+    <form action="./article-auto" method="get">
+        <input type="text" name="title">
+        <input type="text" name="content">
+        <input type="submit" value="제출">
+    </form>
+    <figure>
+        <img class="shot" src="img/auto-result.png" alt="POST MAN 방식 결과 캡쳐">
+        <figcaption>POST MAN 방식 호출 결과 화면</figcaption>
+    </figure>
+</body>
+
+</html>

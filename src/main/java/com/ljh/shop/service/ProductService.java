@@ -37,4 +37,8 @@ public class ProductService {
     public void delete(Long id) {
         productMapper.deleteById(id);
     }
+
+    public Object findAll() {
+        return productMapper.findAll();
+    }
 }

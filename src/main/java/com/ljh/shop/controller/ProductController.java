@@ -16,9 +16,15 @@ public class ProductController {
         this.productService = productService;
     }
 
+    @GetMapping
+    public String list(Model model) {
+        model.addAttribute("items", productService.findAll());
+        return "product/list";
+    }
+
 //    등록 폼 : GET /products/new
     @GetMapping("/new")
-    public String createFrom(Model model) {
+    public String createForm(Model model) {
         model.addAttribute("product", new Product());
         return "product/form";
     }

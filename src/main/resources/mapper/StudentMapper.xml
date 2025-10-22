@@ -7,7 +7,7 @@
         select * from student ORDER BY id DESC
     </select>
         <select id="findById" parameterType="long" resultType="Student">
-            select * from student WHERE id = 1;
+            select * from student WHERE id = #{id};
         </select>
 
     <insert id="insert" parameterType="Student"

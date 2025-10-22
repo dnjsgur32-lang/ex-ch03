@@ -4,10 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
@@ -293,16 +290,16 @@ public class ExService {
         return String.join("<br>", uppercaseList);
     }
 
-    public String ex339() {
-        String src = this.getSomeString();
-        String result = (src == null) ? "EMPTY" : src.toUpperCase();
-        log.info("ex339 result = {}", result);
-        return result;
-    }
+//    public String ex339() {
+//        String src = this.getSomeString();
+//        String result = (src == null) ? "EMPTY" : src.toUpperCase();
+//        log.info("ex339 result = {}", result);
+//        return result;
+//    }
 
-    private String getSomeString() {
-        return null;
-    }
+//    private String getSomeString() {
+//        return null;
+//    }
 
     public String ex3310() {
         List<Integer> list = new ArrayList<>(List.of(3, 1, 2, 10, 8, 9));
@@ -310,6 +307,58 @@ public class ExService {
         String result = list.stream().map(String::valueOf).
                 collect(Collectors.joining(","));
         log.info("desc = {}", result);
+        return result;
+    }
+
+//      ex3311
+//    private static Optional<String> getSomeString() {
+//        return Optional.empty();
+//    }
+
+    public String ex3311() {
+       String result = getSomeString()
+               .map(String::toUpperCase)
+               .orElse("N/A");
+       if (!"N/A".equals(result)){
+           log.info(result);
+       }
+       return result;
+    }
+
+    //    ex3312, ex3313
+    private static Optional<String> getSomeString() {
+        return Optional.ofNullable("public static void");
+    }
+
+    public String ex3312() {
+        Optional<String> isThisNull = getSomeString();
+
+        String result = isThisNull
+                .map(String::toUpperCase)
+                .orElse("N/A");
+
+        log.info("ex3312 result={}", result);
+        return result;
+    }
+
+
+    public String ex3313() {
+        String result = getSomeString()
+                .map(String::toUpperCase)
+                .orElse("N/A");
+        log.info("ex3313 resilt={}", result);
+        return result;
+    }
+
+    public String ex3314() {
+        Optional<String> optionalStr = getSomeString();
+
+        String result = optionalStr
+                .map(String::toUpperCase)
+                .orElse("N/A");
+
+        log.info("ex3314 result={}", result);
+
         return result;
     }
 }

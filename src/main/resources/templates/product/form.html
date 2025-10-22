@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+<head><meta charset="UTF-8"><title>상품 폼</title></head>
+<body>
+<h1 th:text="${product.id} != null ? '상품 수정' : '상품 등록'">상품 폼</h1>
+
+<form th:object="${product}"
+      th:action="${product.id} != null ? @{/products/{id}(id=${product.id})} : @{/products}"
+      method="post">
+  <!-- 무엇: 수정 시에는 hidden으로 id도 함께 전송(하지만 서버는 URL의 id를 최우선 신뢰) -->
+  <input type="hidden" th:field="*{id}">
+
+  <div>
+    <label>이름</label>
+    <input type="text" th:field="*{name}" required>
+  </div>
+  <div>
+    <label>가격</label>
+    <input type="number" th:field="*{price}" min="0" step="1" required>
+  </div>
+  <div>
+    <label>재고</label>
+    <input type="number" th:field="*{stock}" min="0" step="1" required>
+  </div>
+
+  <button type="submit" th:text="${product.id} != null ? '수정' : '등록'">저장</button>
+  <a th:href="@{/products}">목록으로</a>
+</form>
+</body>
+</html>
